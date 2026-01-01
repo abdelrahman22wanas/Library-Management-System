@@ -1,0 +1,57 @@
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.backup
+release.properties
+dependency-reduced-pom.xml
+.flattened-pom.xml
+*.jar
+!LibraryManagement.jar
+
+# IDE
+.vscode/
+.idea/
+*.iml
+*.iws
+*.ipr
+*.swp
+*.swo
+*~
+.DS_Store
+.classpath
+.project
+.settings/
+
+# OS
+Thumbs.db
+.DS_Store
+*.log
+
+# Build & Runtime
+build/
+dist/
+bin/
+out/
+.gradle/
+
+# Python (from data parsing)
+*.py
+__pycache__/
+*.pyc
+
+# IDE Temp Files
+.netbeans/
+nbproject/
+.venv/
+venv/
+
+# Environment & Secrets
+.env
+.env.local
+
+# Optional: Exclude data files (uncomment if you want to version control)
+# data/books.json
+# data/users.json
+# data/loans.json
