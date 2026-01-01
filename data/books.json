@@ -1,0 +1,695 @@
+[
+  {
+    "id": "435b17a5-5a31-4655-91e4-137196cd8c1e",
+    "title": "The Hunger Games (The Hunger Games, #1)",
+    "author": "Suzanne Collins",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "5fda2a14-48ab-4f78-888e-0c27c4a51dc4",
+    "title": "Harry Potter and the Sorcerer's Stone (Harry Potter, #1)",
+    "author": "J.K. Rowling, Mary GrandPré",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "6c497e00-d46a-40de-9152-dd6699733b43",
+    "title": "Twilight (Twilight, #1)",
+    "author": "Stephenie Meyer",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "13c3279f-8f09-479b-ba3b-dc9cf44a88f3",
+    "title": "To Kill a Mockingbird",
+    "author": "Harper Lee",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "24e7c4d6-4c99-4159-bf28-838e0b29fa1a",
+    "title": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "6c16b4dd-19c2-40e1-b034-50a2ec43d150",
+    "title": "The Fault in Our Stars",
+    "author": "John Green",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "fd319e50-6f6d-4c82-a88b-813103b46a94",
+    "title": "The Hobbit",
+    "author": "J.R.R. Tolkien",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "1ff2181c-bc2b-401d-905a-c4841c2960ec",
+    "title": "The Catcher in the Rye",
+    "author": "J.D. Salinger",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "b111c33e-0e2c-4ad3-aa06-85d3e2ff1cd2",
+    "title": "Angels & Demons  (Robert Langdon, #1)",
+    "author": "Dan Brown",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "0911aa23-f684-4f2f-a93a-5c6ac9939229",
+    "title": "Pride and Prejudice",
+    "author": "Jane Austen",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "c7dde597-2a61-45ac-821a-fb1db8497ffd",
+    "title": "The Kite Runner",
+    "author": "Khaled Hosseini",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "27f76b8f-1e24-4f40-bb82-735b6e3bdbd3",
+    "title": "Divergent (Divergent, #1)",
+    "author": "Veronica Roth",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "b349d1f6-ee08-4430-af96-43334e71fa13",
+    "title": "1984",
+    "author": "George Orwell, Erich Fromm, Celâl Üster",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "e3312c13-42e4-4dd6-8c8b-d49c4e9502f7",
+    "title": "Animal Farm",
+    "author": "George Orwell",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "5200ac89-9e7b-4001-a89e-e006ce142f3e",
+    "title": "The Diary of a Young Girl",
+    "author": "Anne Frank, Eleanor Roosevelt, B.M. Mooyaart-Doubleday",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "d5fe5b48-3712-494e-a8e3-65032f68e533",
+    "title": "The Girl with the Dragon Tattoo (Millennium, #1)",
+    "author": "Stieg Larsson, Reg Keeland",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "95324176-7112-4764-8d4e-4f0e98f2e4c0",
+    "title": "Catching Fire (The Hunger Games, #2)",
+    "author": "Suzanne Collins",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "74b25451-c21b-4b63-b8bf-e0c5a30af4f6",
+    "title": "Harry Potter and the Prisoner of Azkaban (Harry Potter, #3)",
+    "author": "J.K. Rowling, Mary GrandPré, Rufus Beck",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "25cc5073-9d5a-4e52-b5e8-80c325ea0564",
+    "title": "The Fellowship of the Ring (The Lord of the Rings, #1)",
+    "author": "J.R.R. Tolkien",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "db1f85ed-a549-4242-acbc-bc3108566430",
+    "title": "Mockingjay (The Hunger Games, #3)",
+    "author": "Suzanne Collins",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "6de29d23-05d5-418c-bcf8-a48d2b0d5a20",
+    "title": "Harry Potter and the Order of the Phoenix (Harry Potter, #5)",
+    "author": "J.K. Rowling, Mary GrandPré",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "41a192f2-161c-4a95-a2aa-de367318b25c",
+    "title": "The Lovely Bones",
+    "author": "Alice Sebold",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "56ffee8c-a86d-43e4-bab5-9836b633e131",
+    "title": "Harry Potter and the Chamber of Secrets (Harry Potter, #2)",
+    "author": "J.K. Rowling, Mary GrandPré",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "095099d2-1100-4e80-87cb-a890680c220f",
+    "title": "Harry Potter and the Goblet of Fire (Harry Potter, #4)",
+    "author": "J.K. Rowling, Mary GrandPré",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "ffb6a780-aa91-400a-a6f2-1d32f3e2ab1c",
+    "title": "Harry Potter and the Deathly Hallows (Harry Potter, #7)",
+    "author": "J.K. Rowling, Mary GrandPré",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "c901594c-0ca5-4551-bc75-81ff8c3161f0",
+    "title": "The Da Vinci Code (Robert Langdon, #2)",
+    "author": "Dan Brown",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "5b85e60d-0f84-4165-b0f7-35081d7236ed",
+    "title": "Harry Potter and the Half-Blood Prince (Harry Potter, #6)",
+    "author": "J.K. Rowling, Mary GrandPré",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "61b220a8-a4ce-4cd1-98cb-8c17bbd89ff2",
+    "title": "Lord of the Flies",
+    "author": "William Golding",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "e8103889-60dc-40ef-b438-5baad5a73c69",
+    "title": "Romeo and Juliet",
+    "author": "William Shakespeare, Robert           Jackson",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "d9bd9ce8-0c84-4a29-b995-b5f1972b5850",
+    "title": "Gone Girl",
+    "author": "Gillian Flynn",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "02562d34-96e8-44e5-82a9-7c1fd52104a3",
+    "title": "The Help",
+    "author": "Kathryn Stockett",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "d0a63a4f-39be-4cf4-8ec2-251560f32e09",
+    "title": "Of Mice and Men",
+    "author": "John Steinbeck",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "d158f9a5-6462-4d9f-965b-ea44ae8196e0",
+    "title": "Memoirs of a Geisha",
+    "author": "Arthur Golden",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "3f9125f6-2071-44a2-aac8-8d340c56ca7e",
+    "title": "Fifty Shades of Grey (Fifty Shades, #1)",
+    "author": "E.L. James",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "15427936-edbf-46dd-9341-337f8b871037",
+    "title": "The Alchemist",
+    "author": "Paulo Coelho, Alan R. Clarke",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "a2a44da3-e0fd-4e70-be42-027ecbba3554",
+    "title": "The Giver (The Giver, #1)",
+    "author": "Lois Lowry",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "ce0b36f3-441b-4415-a5c9-9bb7808bcef7",
+    "title": "The Lion, the Witch, and the Wardrobe (Chronicles of Narnia, #1)",
+    "author": "C.S. Lewis",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "7fd99c9d-a36e-4540-98d6-cc5e7dd68073",
+    "title": "The Time Traveler's Wife",
+    "author": "Audrey Niffenegger",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "7fc28090-b1fa-4f43-8dd2-c4fb1acabe4b",
+    "title": "A Game of Thrones (A Song of Ice and Fire, #1)",
+    "author": "George R.R. Martin",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "2f350b9c-89db-4796-bb52-920ac59ca878",
+    "title": "Eat, Pray, Love",
+    "author": "Elizabeth Gilbert",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "530fa88a-7c8e-4ef9-b3bd-ff367f596ccb",
+    "title": "The Lightning Thief (Percy Jackson and the Olympians, #1)",
+    "author": "Rick Riordan",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "35c26ebf-0fbd-4de4-8bd4-ae7ab6ab2d48",
+    "title": "Little Women (Little Women, #1)",
+    "author": "Louisa May Alcott",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "cd98c5dc-0561-4d05-aaa9-76fbfb5dd01b",
+    "title": "Jane Eyre",
+    "author": "Charlotte Brontë, Michael Mason",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "e9ee454b-008a-46bb-9fdf-e55c1bc3ef61",
+    "title": "The Notebook (The Notebook, #1)",
+    "author": "Nicholas Sparks",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "7b006c86-2b85-48ac-b1a5-5fee43c04b8b",
+    "title": "Life of Pi",
+    "author": "Yann Martel",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "91c969f6-088d-451e-a581-d090f0d3e259",
+    "title": "Water for Elephants",
+    "author": "Sara Gruen",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "a4a8e3f0-edf5-4cfc-8cea-bbaafc93371d",
+    "title": "The Book Thief",
+    "author": "Markus Zusak",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "abdebd81-60e7-4e42-b945-956175bd5b41",
+    "title": "Fahrenheit 451",
+    "author": "Ray Bradbury",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "5ea364d7-83a6-49d4-9c22-4892c3cd1c72",
+    "title": "New Moon (Twilight, #2)",
+    "author": "Stephenie Meyer",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "b74d9acf-26e7-4821-889d-a0eabeb324c3",
+    "title": "Where the Sidewalk Ends",
+    "author": "Shel Silverstein",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "1b47c087-4ae8-48f9-9f38-c58f2fd21c3b",
+    "title": "City of Bones (The Mortal Instruments, #1)",
+    "author": "Cassandra Clare",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "b3efe59f-8448-48c5-a78e-21bea30df0f8",
+    "title": "Eclipse (Twilight, #3)",
+    "author": "Stephenie Meyer",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "02c36675-fd5f-4b86-88f7-bd1976d1830b",
+    "title": "Eragon (The Inheritance Cycle, #1)",
+    "author": "Christopher Paolini",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "b1b23faa-3aed-4b19-bd20-cae695771c84",
+    "title": "The Hitchhiker's Guide to the Galaxy (Hitchhiker's Guide to the Galaxy, #1)",
+    "author": "Douglas Adams",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "3f834719-8d2d-4d97-bca2-f8484b1e4ca3",
+    "title": "Brave New World",
+    "author": "Aldous Huxley",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "167617b7-5171-4efd-89e3-c991ca14fcac",
+    "title": "Breaking Dawn (Twilight, #4)",
+    "author": "Stephenie Meyer",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "90448283-2e20-41ed-b727-c9dffe284483",
+    "title": "The Secret Life of Bees",
+    "author": "Sue Monk Kidd",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "6e175090-0599-4986-9767-9c65656fbbfb",
+    "title": "The Adventures of Huckleberry Finn",
+    "author": "Mark Twain, John Seelye, Guy Cardwell",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "8014e314-4da1-454d-aa40-dbc6673689e1",
+    "title": "Charlotte's Web",
+    "author": "E.B. White, Garth Williams, Rosemary Wells",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "6f258b83-e2c8-4114-868b-f10aa84ad48c",
+    "title": "The Curious Incident of the Dog in the Night-Time",
+    "author": "Mark Haddon",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "ff05a17e-1619-4410-9930-5376a4593b71",
+    "title": "The Girl on the Train",
+    "author": "Paula Hawkins",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "511d3d58-d86c-422c-a55d-80c2144a1822",
+    "title": "The Golden Compass (His Dark Materials, #1)",
+    "author": "Philip Pullman",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "4ff76d42-dfd4-443e-a6a4-9fc1e1da208f",
+    "title": "Wuthering Heights",
+    "author": "Emily Brontë, Richard J. Dunn",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "fc2596be-2aca-469a-947a-e20cb1e9768c",
+    "title": "My Sister's Keeper",
+    "author": "Jodi Picoult",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "fb061a29-3d4f-417f-ba8c-7304ac23adc5",
+    "title": "Slaughterhouse-Five",
+    "author": "Kurt Vonnegut Jr.",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "2693c496-8eea-42aa-b28a-9e0c9da62ca5",
+    "title": "Gone with the Wind",
+    "author": "Margaret Mitchell",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "aef45a67-ce4b-44e3-b3aa-888487a2ebfa",
+    "title": "A Thousand Splendid Suns",
+    "author": "Khaled Hosseini",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "bbdcd377-b9b1-45b0-89d7-d5121908c7b6",
+    "title": "The Perks of Being a Wallflower",
+    "author": "Stephen Chbosky",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "d08ed097-b535-4cd7-b743-93dd2d3831f2",
+    "title": "Insurgent (Divergent, #2)",
+    "author": "Veronica Roth",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "34b6675b-8a25-4347-a7a5-9e26f77d1a80",
+    "title": "Ender's Game (Ender's Saga, #1)",
+    "author": "Orson Scott Card",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "5a5a42e8-1df7-46d4-aab3-164926689f05",
+    "title": "Frankenstein",
+    "author": "Mary Wollstonecraft Shelley, Percy Bysshe Shelley, Maurice Hindle",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "0ef3b586-3a6e-4256-9d81-eac92c7eda9b",
+    "title": "The Shining (The Shining #1)",
+    "author": "Stephen King",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "36b12257-874d-4779-8ce4-8655efa4073e",
+    "title": "The Host (The Host, #1)",
+    "author": "Stephenie Meyer",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "d9859292-875b-4097-a4db-2471ae2e8803",
+    "title": "Looking for Alaska",
+    "author": "John Green",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "095c444c-e7ea-4278-90e9-7301ecb2f1e9",
+    "title": "Bridget Jones's Diary (Bridget Jones, #1)",
+    "author": "Helen Fielding",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "97786343-214d-438f-b66a-c80bfbcdba20",
+    "title": "Sense and Sensibility",
+    "author": "Jane Austen, Tony Tanner, Ros Ballaster",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "b8279c63-97d5-40ad-b8ca-86f3ba126114",
+    "title": "Holes (Holes, #1)",
+    "author": "Louis Sachar, Louis Sachar",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "ddcfdbf6-f9ca-4139-8f36-ed605c7de043",
+    "title": "The Devil Wears Prada (The Devil Wears Prada, #1)",
+    "author": "Lauren Weisberger",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "68b70897-59e1-4caa-bc36-9700f641764e",
+    "title": "The Odyssey",
+    "author": "Homer, Robert Fagles, E.V. Rieu, Frédéric Mugler, Bernard Knox",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "37639712-e403-476e-94aa-28b1b3a56566",
+    "title": "The Little Prince",
+    "author": "Antoine de Saint-Exupéry, Richard Howard, Dom Marcos Barbosa, Melina Karakosta",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "f78041a7-2160-4d36-ae2e-ae762908f76d",
+    "title": "The Glass Castle",
+    "author": "Jeannette Walls",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "b6dc7c4f-6015-4d87-88c3-97a772219636",
+    "title": "Into the Wild",
+    "author": "Jon Krakauer",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "ef0932b3-c91b-40b7-a2b4-ada20ad1363b",
+    "title": "A Tale of Two Cities",
+    "author": "Charles Dickens, Richard Maxwell, Hablot Knight Browne",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "b8eec64d-ee23-44b2-a1cc-b1e784bf7b52",
+    "title": "Jurassic Park (Jurassic Park, #1)",
+    "author": "Michael Crichton",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "070847a7-44d6-4014-8b0f-1a2b27df092b",
+    "title": "The Giving Tree",
+    "author": "Shel Silverstein",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "50acdd5d-92ad-47cb-9abc-9b4cdae73b48",
+    "title": "A Time to Kill",
+    "author": "John Grisham",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "4aa2a701-511c-43b1-864e-cba943d998df",
+    "title": "Night (The Night Trilogy #1)",
+    "author": "Elie Wiesel, Marion Wiesel",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "c3d09b91-5e1f-486c-a17d-e463cb3d15a6",
+    "title": "Paper Towns",
+    "author": "John Green",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "dfb8ccf4-a252-419a-a1aa-ea80ea9ac039",
+    "title": "The Princess Bride",
+    "author": "William Goldman",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "07431fc3-188a-4a82-b933-e2ed441142fd",
+    "title": "The Outsiders",
+    "author": "S.E. Hinton",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "e0cd94ee-a7fc-41f2-801d-134cb7a79b01",
+    "title": "The Maze Runner (Maze Runner, #1)",
+    "author": "James Dashner",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "ac619692-e960-43c7-80fd-51e02ad5110e",
+    "title": "Freakonomics: A Rogue Economist Explores the Hidden Side of Everything (Freakonomics, #1)",
+    "author": "Steven D. Levitt, Stephen J. Dubner",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "7c0a7c2c-1063-4a4a-b140-ce2a7215584f",
+    "title": "The Secret Garden",
+    "author": "Frances Hodgson Burnett",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "0c34e44b-fa57-4130-b5ac-7b7efdad102c",
+    "title": "One Hundred Years of Solitude",
+    "author": "Gabriel García Márquez, Gregory Rabassa",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "9a4cdfb9-87cd-4e9f-9d97-b4279d9483a6",
+    "title": "The Picture of Dorian Gray",
+    "author": "Oscar Wilde, Jeffrey Eugenides",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "45455fbf-d533-4aa1-bd45-f4d93d9a2df9",
+    "title": "Fifty Shades Freed (Fifty Shades, #3)",
+    "author": "E.L. James",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "f3359565-0ac7-447a-aa1e-8733c8d8f993",
+    "title": "Dracula",
+    "author": "Bram Stoker, Nina Auerbach, David J. Skal",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "a00c5537-079f-4aaf-9af1-6e70bbc661e4",
+    "title": "The Girl Who Played with Fire (Millennium, #2)",
+    "author": "Stieg Larsson, Reg Keeland",
+    "totalCopies": 3,
+    "availableCopies": 3
+  },
+  {
+    "id": "0e445022-638c-44db-900e-61fc53da41c3",
+    "title": "Fifty Shades Darker (Fifty Shades, #2)",
+    "author": "E.L. James",
+    "totalCopies": 3,
+    "availableCopies": 3
+  }
+]
