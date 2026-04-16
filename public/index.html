@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <h1>📚 Library Management System</h1>
+            <p class="subtitle">Manage books, users, and loans</p>
+        </header>
+
+        <!-- Navigation Tabs -->
+        <nav class="tabs">
+            <button class="tab-btn active" data-tab="books">Books</button>
+            <button class="tab-btn" data-tab="users">Users</button>
+            <button class="tab-btn" data-tab="loans">Loans</button>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="content">
+            <!-- Books Tab -->
+            <section id="books" class="tab-content active">
+                <div class="card">
+                    <h2>Add New Book</h2>
+                    <form id="addBookForm">
+                        <input type="text" id="bookTitle" placeholder="Book Title" required>
+                        <input type="text" id="bookAuthor" placeholder="Author" required>
+                        <input type="number" id="bookCopies" placeholder="Number of Copies" min="1" value="1">
+                        <button type="submit" class="btn btn-primary">Add Book</button>
+                    </form>
+                </div>
+
+                <div class="card">
+                    <h2>Book Inventory</h2>
+                    <div id="booksContainer" class="table-container">
+                        <p class="loading">Loading books...</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Users Tab -->
+            <section id="users" class="tab-content">
+                <div class="card">
+                    <h2>Add New User</h2>
+                    <form id="addUserForm">
+                        <input type="text" id="userName" placeholder="Full Name" required>
+                        <input type="email" id="userEmail" placeholder="Email Address" required>
+                        <button type="submit" class="btn btn-primary">Add User</button>
+                    </form>
+                </div>
+
+                <div class="card">
+                    <h2>User Directory</h2>
+                    <div id="usersContainer" class="table-container">
+                        <p class="loading">Loading users...</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Loans Tab -->
+            <section id="loans" class="tab-content">
+                <div class="card">
+                    <h2>Borrow Books</h2>
+                    <form id="borrowForm">
+                        <select id="borrowUser" required>
+                            <option value="">Select User</option>
+                        </select>
+                        <select id="borrowBook" required>
+                            <option value="">Select Book</option>
+                        </select>
+                        <input type="number" id="borrowDuration" placeholder="Loan Duration (days)" min="1" value="14">
+                        <button type="submit" class="btn btn-primary">Borrow Book</button>
+                    </form>
+                </div>
+
+                <div class="card">
+                    <h2>Return Books</h2>
+                    <form id="returnForm">
+                        <select id="activeLoan" required>
+                            <option value="">Select Active Loan</option>
+                        </select>
+                        <input type="date" id="returnDate" required>
+                        <button type="submit" class="btn btn-success">Return Book</button>
+                    </form>
+                </div>
+
+                <div class="card">
+                    <h2>Loan History</h2>
+                    <div id="loansContainer" class="table-container">
+                        <p class="loading">Loading loans...</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2026 Library Management System | Version 1.0.0</p>
+        </footer>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

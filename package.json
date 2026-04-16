@@ -1,0 +1,22 @@
+{
+  "name": "library-management-web",
+  "version": "1.0.0",
+  "description": "Web version of Library Management System for Vercel deployment",
+  "private": true,
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "echo 'Build complete'",
+    "start": "node api/server.js"
+  },
+  "keywords": [
+    "library",
+    "management",
+    "books",
+    "vercel"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "vercel": "^latest"
+  }
+}
