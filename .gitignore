@@ -1,14 +1,8 @@
-# Maven
+# Maven & Java
 target/
-pom.xml.tag
-pom.xml.releaseBackup
-pom.xml.versionsBackup
-pom.xml.backup
-release.properties
-dependency-reduced-pom.xml
-.flattened-pom.xml
 *.jar
 !LibraryManagement.jar
+dependency-reduced-pom.xml
 
 # IDE
 .vscode/
@@ -23,6 +17,19 @@ dependency-reduced-pom.xml
 .classpath
 .project
 .settings/
+.netbeans/
+nbproject/
+
+# Node & React
+node_modules/
+npm-debug.log
+yarn-error.log
+.pnpm-debug.log
+dist/
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 
 # OS
 Thumbs.db
@@ -31,27 +38,19 @@ Thumbs.db
 
 # Build & Runtime
 build/
-dist/
-bin/
 out/
+bin/
 .gradle/
+.venv/
+venv/
 
-# Python (from data parsing)
+# Python
 *.py
 __pycache__/
 *.pyc
 
-# IDE Temp Files
-.netbeans/
-nbproject/
-.venv/
-venv/
-
-# Environment & Secrets
-.env
-.env.local
-
-# Optional: Exclude data files (uncomment if you want to version control)
+# Optional
 # data/books.json
 # data/users.json
 # data/loans.json
+

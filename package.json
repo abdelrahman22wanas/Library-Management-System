@@ -1,22 +1,32 @@
 {
   "name": "library-management-web",
   "version": "1.0.0",
-  "description": "Web version of Library Management System for Vercel deployment",
+  "description": "Web version of Library Management System with React + Vite for Vercel",
   "private": true,
+  "type": "module",
   "scripts": {
-    "dev": "vercel dev",
-    "build": "echo 'Build complete'",
-    "start": "node api/server.js"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "vercel-build": "vite build"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.0.0",
+    "vite": "^4.3.0"
   },
   "keywords": [
     "library",
     "management",
     "books",
+    "react",
+    "vite",
     "vercel"
   ],
   "author": "",
-  "license": "MIT",
-  "devDependencies": {
-    "vercel": "^latest"
-  }
+  "license": "MIT"
 }
+
