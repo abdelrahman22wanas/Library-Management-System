@@ -1,205 +1,337 @@
-# Library Management System (JavaFX + Maven)
+# Library Management System
 
-A modern, responsive desktop application for managing a library's book collection, user accounts, and loan transactions with automatic fine calculation.
+A modern library management application available in **two versions**: Desktop (JavaFX) and Web (React).
 
-## ✨ Features
-- **📚 Manage 99 Pre-loaded Books** - All books with titles and authors from CSV
-- **👥 User Management** - Add and track library users
-- **📖 Borrow & Return System** - Track book loans with due dates
-- **💰 Automatic Fine Calculation** - $1.00 per overdue day (configurable)
-- **📊 Responsive UI** - Fully resizable window that adapts to any screen size
-- **🎨 Modern Dark Theme** - Professional dark interface with blue accents
-- **💾 File Persistence** - JSON-based data storage (easy to migrate to database)
-- **🖼️ Custom App Icon** - Book icon displayed in window title bar
+## 📦 Two Versions Available
 
-## 📋 Prerequisites
+### 🖥️ **Desktop Version** (main branch)
+- **Technology**: Java 21 + JavaFX
+- **Run**: Double-click `LibraryManagement.bat`
+- **Features**: Native desktop app with file-based storage
+
+### 🌐 **Web Version** (web-version branch) ⭐ **NEW**
+- **Technology**: React 18 + Vite
+- **Run**: `npm run dev`
+- **Deploy**: Vercel (instant hosting)
+- **Features**: Modern animations, gradient UI, fully responsive
+
+## ✨ Core Features (Both Versions)
+
+- **📚 Manage 99 Pre-loaded Books** - Browse and add books from a curated catalog
+- **👥 User Management** - Add, track, and manage library users
+- **📖 Borrow & Return System** - Track book loans with automatic due dates
+- **💰 Automatic Fine Calculation** - $1.00 per overdue day
+- **🔍 Advanced Search** - Filter books by title or author
+- **📊 Beautiful UI** - Modern, responsive design
+- **💾 Data Persistence** - Save and restore your data
+
+## 🌐 Web Version (Recommended for New Users)
+
+The **web version** is the modern, actively developed version with the latest features!
+
+### ✨ What's Special
+- 🎨 **Gradient buttons** with smooth animations
+- ⚡ **Lightning-fast** with Vite build tool
+- 📱 **Fully responsive** - works on desktop, tablet, mobile
+- ☁️ **Deploy anywhere** - Vercel, Netlify, or your own server
+- 🎬 **Smooth animations** - fade-ins, slides, hovers
+- 🌈 **Modern design** - shadows, depth, glass effects
+
+### 🚀 Quick Start (Web)
+
+#### Development
+```bash
+npm install
+npm run dev
+# Open http://localhost:5173
+```
+
+#### Production Build
+```bash
+npm run build
+npm run preview
+```
+
+#### Deploy to Vercel
+```bash
+git push origin web-version
+# Then import in Vercel dashboard
+```
+
+### 📁 Web Version Structure
+```
+web-version/
+├── src/
+│   ├── index.jsx              # React entry point
+│   ├── App.jsx                # Main app component
+│   ├── styles/index.css       # Modern CSS with animations
+│   └── components/
+│       ├── Header.jsx
+│       ├── TabNavigation.jsx
+│       ├── Toast.jsx
+│       ├── Footer.jsx
+│       └── tabs/
+│           ├── BooksTab.jsx
+│           ├── BrowseTab.jsx
+│           ├── UsersTab.jsx
+│           └── LoansTab.jsx
+├── api/                       # Vercel serverless functions
+│   ├── books.js
+│   ├── users.js
+│   └── loans.js
+├── index.html
+├── vite.config.js
+├── vercel.json
+└── package.json
+```
+
+---
+
+## 🖥️ Desktop Version (Legacy)
+
+For traditional desktop usage, see the desktop version on the **main** branch.
+
+### Prerequisites
 - **JDK 21+** (check: `java -version`)
 - **Maven 3.9+** (check: `mvn -version`)
-- **JavaFX SDK 25.0.1** unpacked at `C:\javafx-sdk-25.0.1`
+- **JavaFX SDK 25.0.1**
 
-## 🚀 Quick Start
+### Quick Start (Desktop)
 
-### Option 1: Run as Desktop Application (Easiest)
 ```powershell
-# Double-click:
+# Option 1: Double-click launcher
 LibraryManagement.bat
-```
-Or from PowerShell:
-```powershell
-java --module-path C:\javafx-sdk-25.0.1\lib --add-modules javafx.controls,javafx.fxml -jar target/LibraryManagement.jar
-```
 
-### Option 2: Run During Development
-```powershell
+# Option 2: Maven
 mvn javafx:run
-```
 
-### Option 3: Build and Run Manually
-```powershell
+# Option 3: Manual build
 mvn clean package
-# Then run the JAR (12 MB standalone executable)
 java --module-path C:\javafx-sdk-25.0.1\lib --add-modules javafx.controls,javafx.fxml -jar target/LibraryManagement.jar
 ```
 
-## 📁 Project Structure
-```
-Library Management System/
-├── src/main/java/com/example/library/
-│   ├── LibraryApp.java                    # JavaFX entry point with app icon
-│   ├── ui/
-│   │   └── LibraryController.java         # FXML controller binding UI to service
-│   ├── model/
-│   │   ├── Book.java                      # Book entity with copy tracking
-│   │   ├── User.java                      # User entity
-│   │   ├── Loan.java                      # Loan transaction record
-│   │   └── FineCalculator.java            # Fine calculation utility
-│   ├── service/
-│   │   └── LibraryService.java            # Core business logic (add, borrow, return, fine)
-│   └── storage/
-│       ├── StorageProvider.java           # Storage abstraction interface
-│       └── FileStorageProvider.java       # JSON file persistence
-│
-├── src/main/resources/com/example/library/
-│   ├── layout.fxml                        # Responsive UI layout (3 tabs)
-│   └── book-icon.jpg                      # Application icon
-│
-├── data/
-│   ├── books.json                         # 99 books (auto-created on first run)
-│   ├── users.json                         # User records
-│   └── loans.json                         # Loan transaction history
-│
-├── target/
-│   └── LibraryManagement.jar              # Standalone executable (12 MB)
-│
-├── pom.xml                                # Maven configuration with plugins
-├── LibraryManagement.bat                  # Windows launcher
-├── books.csv                              # Original book data source
-├── DESKTOP_APP_BUILD.md                   # Desktop app build documentation
-└── README.md                              # This file
-```
+## 🎯 Usage Guide
 
-## 🎯 Usage
+### Web Version Usage
 
-### Adding Books
-1. Navigate to **Books** tab
+#### Adding Books
+1. Click **Books** tab
 2. Enter Title, Author, and Copies
-3. Click **Add Book**
+3. Click **✨ Add Book** button
 
-### Adding Users
-1. Navigate to **Users** tab
+#### Browsing Catalog
+1. Click **Browse Catalog** tab
+2. Use search box to filter books
+3. Click **+ Add to Library** on any book
+4. Button changes to **✓ Added to Library**
+
+#### Managing Users
+1. Click **Users** tab
 2. Enter Name and Email
-3. Click **Add User**
+3. Click **✨ Add User** button
 
-### Borrowing Books
-1. Navigate to **Loans** tab → **Borrow** section
-2. Select User and Book from dropdowns
-3. Enter loan duration (days)
-4. Click **Borrow**
+#### Borrowing Books
+1. Click **Loans** tab
+2. Select User from dropdown
+3. Select Book from dropdown (shows available copies)
+4. Set loan duration (default 14 days)
+5. Click **📖 Borrow Book** button
 
-### Returning Books
-1. Navigate to **Loans** tab → **Return** section
-2. Select active loan from dropdown
-3. Choose return date
-4. Click **Return** (fine auto-calculated if overdue)
+#### Returning Books
+1. In **Loans** tab, find the active loan
+2. Select from dropdown
+3. Set return date
+4. Click **✨ Return Book** button
+5. Fine is auto-calculated if overdue!
 
-## 🔧 Configuration
+### Desktop Version Usage
+See **DESKTOP_APP_BUILD.md** for desktop version usage.
 
-### Change Fine Rate
-Edit `src/main/java/com/example/library/service/LibraryService.java`:
-```java
-private static final BigDecimal dailyFineRate = new BigDecimal("1.00"); // Change this value
+---
+
+## 🎨 Design & Styling (Web Version)
+
+### Color Scheme
+| Color | Usage | Gradient |
+|-------|-------|----------|
+| Blue | Primary actions | #1e3a8a → #3b82f6 |
+| Green | Positive actions | #10b981 → #059669 |
+| Red | Destructive actions | #ef4444 → #dc2626 |
+| Gray | Disabled states | #9ca3af → #6b7280 |
+
+### Animations
+- **slideDown**: Header entrance
+- **slideUp**: Card animations  
+- **fadeInUp**: Content transitions
+- **scaleIn**: Book card pop-ins
+- **expandWidth**: Tab indicators
+- **Hover effects**: Smooth scale and shadow effects
+
+### Shadows
+- Small: `0 1px 2px rgba(0,0,0,0.05)`
+- Medium: `0 4px 6px rgba(0,0,0,0.1)`
+- Large: `0 10px 15px rgba(0,0,0,0.1)`
+- Extra: `0 25px 50px rgba(0,0,0,0.25)`
+
+---
+
+## 🌐 Deployment
+
+### Deploy Web Version to Vercel
+
+**Fastest Method:**
+1. Push to GitHub: `git push origin web-version`
+2. Go to https://vercel.com/dashboard
+3. Click "New Project"
+4. Import your repository
+5. Select `web-version` branch
+6. Click "Deploy"
+7. Your app is live! 🎉
+
+**Direct from CLI:**
+```bash
+npm install -g vercel
+vercel
+# Follow prompts to deploy
 ```
 
-### Window Size
-Default: 1200×800px (resizable, minimum 900×600px)
+### Deploy to Other Platforms
+- **Netlify**: Connect repo, select `web-version` branch
+- **GitHub Pages**: Build and deploy from Actions
+- **Self-hosted**: `npm run build` creates `dist/` folder
 
-## 💾 Data Storage
+---
 
-### JSON-Based Persistence
-All data stored in `data/` directory as JSON files:
-- **books.json** - All 99 books with metadata
-- **users.json** - Library users
-- **loans.json** - Borrow/return transactions
+## 🔌 API Endpoints
 
-### Swap to Database
-The `StorageProvider` interface allows easy replacement:
-1. Create `DatabaseStorageProvider` implementing `StorageProvider`
-2. Update `LibraryApp.java` to use new implementation instead of `FileStorageProvider`
-3. No changes needed to business logic
+All endpoints are available at `/api/`:
 
-## 📦 Distribution
-
-The standalone JAR (`target/LibraryManagement.jar`) can be:
-- ✅ Shared directly with other users
-- ✅ Placed on network drives
-- ✅ Packaged into an installer (NSIS/WiX)
-- ✅ Run on any machine with Java 21 + JavaFX SDK
-
-## 🛠️ Build & Development
-
-### Build Desktop App
-```powershell
-mvn clean package
+### Books
 ```
-Creates: `target/LibraryManagement.jar` (standalone executable)
-
-### Clean All Data
-```powershell
-Remove-Item -Path data -Recurse -Force
+GET  /api/books              # Get all library books
+POST /api/books              # Add a new book
+GET  /api/books?catalog=true # Get 99 catalog books
+DELETE /api/books?id=...     # Delete a book
 ```
-Data recreates on next run with sample books.
 
-### Development Mode
-```powershell
-mvn javafx:run
+### Users
 ```
-Compiles and runs immediately with hot-reload capability.
+GET  /api/users              # Get all users
+POST /api/users              # Add a new user
+DELETE /api/users?id=...     # Delete a user
+```
 
-## 🎨 UI Components
+### Loans
+```
+GET  /api/loans              # Get all loans
+POST /api/loans              # Borrow a book
+PUT  /api/loans?id=...       # Return a book
+DELETE /api/loans?id=...     # Delete a loan
+```
 
-### Books Tab
-- TableView showing all books (Title, Author, Available, Total)
-- Input form to add new books
-- Responsive table that grows with window size
+---
 
-### Users Tab
-- TableView showing all users (Name, Email)
-- Input form to add new users
-- Auto-expanding columns
+## 🔮 Future Roadmap
 
-### Loans Tab
-- TableView showing all loan history
-- **Borrow Section** - ComboBoxes for user/book selection, days input
-- **Return Section** - Active loan selector, return date picker
-- Auto-calculated fines for overdue books
+- [ ] User authentication & login
+- [ ] Supabase integration for cloud storage
+- [ ] Dark/Light theme toggle
+- [ ] Email notifications for overdue books
+- [ ] Payment processing for fines
+- [ ] Book reviews & ratings
+- [ ] Admin dashboard with analytics
+- [ ] Mobile app version
+- [ ] QR code scanning for books
+- [ ] Advanced search filters
 
-## ⚙️ Technical Details
+---
 
-**Language:** Java 21
-**GUI Framework:** JavaFX 25.0.1
-**Build Tool:** Apache Maven
-**Data Format:** JSON (Jackson 2.17.1)
-**Date/Time:** Java Time API (LocalDate, LocalDateTime)
-**Architecture:** Service Layer Pattern with Storage Abstraction
+## 📊 Technical Stack
 
-## 📝 Notes
+### Web Version
+| Component | Technology |
+|-----------|------------|
+| Framework | React 18.2 |
+| Build Tool | Vite 4.3 |
+| Styling | Pure CSS + Gradients |
+| Deployment | Vercel |
+| Backend | Serverless Functions |
 
-- **Initial Window:** 1200×800 (resizable, min 900×600)
-- **Fine Calculation:** Triggered at return time, no penalties until return
-- **Data Persistence:** Automatic save after each operation
-- **Backward Compatibility:** Old JSON formats handled gracefully via Jackson annotations
+### Desktop Version
+| Component | Technology |
+|-----------|------------|
+| Language | Java 21 |
+| GUI | JavaFX 25.0.1 |
+| Build | Apache Maven |
+| Data | JSON (Jackson) |
+| Storage | File-based |
 
-## 🐛 Troubleshooting
+---
 
-| Problem | Solution |
-|---------|----------|
-| "Java not found" | Install Java 21+ and add to PATH |
-| "JavaFX not found" | Ensure `C:\javafx-sdk-25.0.1` exists |
-| "Module javafx not found" | Use `--module-path` and `--add-modules` flags |
-| "Port already in use" | App uses file-based storage, no port conflicts |
-| "Data won't save" | Ensure `data/` directory is writable |
+## 📱 Browser Support (Web Version)
 
-## 📄 License & Notes
+✅ Chrome 90+
+✅ Firefox 88+
+✅ Safari 14+
+✅ Edge 90+
+✅ Mobile browsers (iOS Safari, Chrome Android)
 
-Built with JavaFX, Maven, and Jackson for a complete library management solution.
-Ready for production use or educational purposes.
+---
+
+## 🆘 Support & Troubleshooting
+
+### Web Version
+
+| Issue | Solution |
+|-------|----------|
+| Blank page | Clear cache, hard refresh (Ctrl+Shift+R) |
+| Data not saving | Check browser console for API errors |
+| Slow performance | Check network tab, clear localStorage |
+| Books not appearing | Make sure API endpoint is accessible |
+
+### Desktop Version
+See **DESKTOP_APP_BUILD.md**
+
+---
+
+## 📄 Documentation
+
+- **README.md** - This file (project overview)
+- **README_REACT.md** - React/Vite technical details
+- **DESKTOP_APP_BUILD.md** - Desktop app guide
+
+---
+
+## 🎓 Educational Value
+
+This project demonstrates:
+- **Desktop Development**: JavaFX architecture, MVC pattern
+- **Web Development**: React components, hooks, state management
+- **Full-Stack**: Frontend + serverless backend
+- **DevOps**: Multi-branch deployment, Vercel hosting
+- **UI/UX**: Modern design, animations, responsive layouts
+- **Clean Code**: Component-based, modular architecture
+
+---
+
+## 📝 Version History
+
+| Version | Type | Changes |
+|---------|------|---------|
+| 2.0.0 | Web | React + Vite, modern animations |
+| 1.0.0 | Desktop | JavaFX desktop application |
+
+---
+
+## 📞 Contact & Support
+
+- Issues: GitHub Issues
+- Questions: Create a discussion
+- Contributions: Pull requests welcome!
+
+---
+
+**Version**: 2.0.0 (Web) / 1.0.0 (Desktop)
+**Last Updated**: April 16, 2026
+**Status**: ✅ Production Ready (Both Versions)
+**License**: MIT
