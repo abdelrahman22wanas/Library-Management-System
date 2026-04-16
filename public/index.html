@@ -17,6 +17,7 @@
         <!-- Navigation Tabs -->
         <nav class="tabs">
             <button class="tab-btn active" data-tab="books">Books</button>
+            <button class="tab-btn" data-tab="browse">Browse Catalog</button>
             <button class="tab-btn" data-tab="users">Users</button>
             <button class="tab-btn" data-tab="loans">Loans</button>
         </nav>
@@ -39,6 +40,22 @@
                     <h2>Book Inventory</h2>
                     <div id="booksContainer" class="table-container">
                         <p class="loading">Loading books...</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Browse Catalog Tab -->
+            <section id="browse" class="tab-content">
+                <div class="card">
+                    <h2>📚 Browse Our Catalog</h2>
+                    <p style="color: var(--text-light); margin-bottom: 1.5rem;">Select books to add to your library. Search or scroll to find titles.</p>
+                    
+                    <div style="margin-bottom: 1.5rem;">
+                        <input type="text" id="catalogSearch" placeholder="🔍 Search by title or author..." style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-color); border-radius: 6px; font-size: 1rem;">
+                    </div>
+
+                    <div id="catalogContainer" class="catalog-grid">
+                        <p class="loading">Loading catalog...</p>
                     </div>
                 </div>
             </section>

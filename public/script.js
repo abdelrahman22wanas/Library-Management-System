@@ -6,12 +6,15 @@ const state = {
     books: [],
     users: [],
     loans: [],
+    catalog: [],
+    filteredCatalog: [],
 };
 
 // Initialize App
 document.addEventListener('DOMContentLoaded', () => {
     setupEventListeners();
     loadData();
+    loadCatalog();
 });
 
 // Event Listeners
@@ -26,6 +29,11 @@ function setupEventListeners() {
     document.getElementById('addUserForm').addEventListener('submit', handleAddUser);
     document.getElementById('borrowForm').addEventListener('submit', handleBorrow);
     document.getElementById('returnForm').addEventListener('submit', handleReturn);
+
+    // Catalog Search
+    document.getElementById('catalogSearch').addEventListener('input', (e) => {
+        filterCatalog(e.target.value);
+    });
 }
 
 // Tab Switching
@@ -89,6 +97,26 @@ async function loadLoans() {
     } catch (error) {
         console.error('Error loading loans:', error);
     }
+}
+
+async function loadCatalog() {
+    try {
+        const response = await fetch(`${API_BASE}/books?catalog=true`);
+        state.catalog = await response.json();
+        state.filteredCatalog = state.catalog;
+        renderCatalog();
+    } catch (error) {
+        console.error('Error loading catalog:', error);
+    }
+}
+
+function filterCatalog(searchTerm) {
+    const term = searchTerm.toLowerCase();
+    state.filteredCatalog = state.catalog.filter(book =>
+        book.title.toLowerCase().includes(term) ||
+        book.author.toLowerCase().includes(term)
+    );
+    renderCatalog();
 }
 
 // Books Operations
@@ -405,6 +433,61 @@ function updateLoanDropdowns() {
 
     // Set today as default return date
     document.getElementById('returnDate').valueAsDate = new Date();
+}
+
+// Catalog Operations
+function renderCatalog() {
+    const container = document.getElementById('catalogContainer');
+
+    if (state.filteredCatalog.length === 0) {
+        container.innerHTML = '<p class="empty-state" style="grid-column: 1/-1;">No books found matching your search.</p>';
+        return;
+    }
+
+    let html = '';
+    state.filteredCatalog.forEach(book => {
+        const isAdded = state.books.some(b => b.title === book.title && b.author === book.author);
+        const buttonClass = isAdded ? 'btn-secondary' : 'btn-primary';
+        const buttonText = isAdded ? '✓ Added to Library' : '+ Add to Library';
+
+        html += `
+            <div class="book-card">
+                <h3>${book.title}</h3>
+                <p class="author">by ${book.author}</p>
+                <button class="btn ${buttonClass}" 
+                    onclick="addBookFromCatalog('${book.id}', '${book.title.replace(/'/g, "\\'")}', '${book.author.replace(/'/g, "\\'")}')"
+                    ${isAdded ? 'disabled' : ''}>
+                    ${buttonText}
+                </button>
+            </div>
+        `;
+    });
+
+    container.innerHTML = `<div class="catalog-grid">${html}</div>`;
+}
+
+async function addBookFromCatalog(catalogId, title, author) {
+    try {
+        const response = await fetch(`${API_BASE}/books`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                title,
+                author,
+                copies: 1,
+                catalogId,
+            }),
+        });
+
+        if (response.ok) {
+            const book = await response.json();
+            showToast(`"${title}" added to library!`, 'success');
+            await loadBooks();
+            renderCatalog(); // Re-render to update button states
+        }
+    } catch (error) {
+        showToast('Error adding book: ' + error.message, 'error');
+    }
 }
 
 // Toast Notifications

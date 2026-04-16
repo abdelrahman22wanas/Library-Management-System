@@ -1,8 +1,4 @@
-// In-memory storage (for demo - replace with Supabase in production)
-let books = [];
-
-// Book catalog from CSV
-const bookCatalog = [
+[
   {"id": "1", "title": "The Hunger Games", "author": "Suzanne Collins"},
   {"id": "2", "title": "Harry Potter and the Sorcerer's Stone", "author": "J.K. Rowling, Mary GrandPré"},
   {"id": "3", "title": "Twilight", "author": "Stephenie Meyer"},
@@ -102,63 +98,4 @@ const bookCatalog = [
   {"id": "97", "title": "Dracula", "author": "Bram Stoker, Nina Auerbach, David J. Skal"},
   {"id": "98", "title": "The Girl Who Played with Fire", "author": "Stieg Larsson, Reg Keeland"},
   {"id": "99", "title": "Fifty Shades Darker", "author": "E.L. James"}
-];
-
-export default function handler(req, res) {
-    res.setHeader('Access-Control-Allow-Credentials', 'true');
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
-    res.setHeader(
-        'Access-Control-Allow-Headers',
-        'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
-    );
-
-    if (req.method === 'OPTIONS') {
-        res.status(200).end();
-        return;
-    }
-
-    // Get library books (added by user)
-    if (req.method === 'GET' && !req.query.catalog) {
-        return res.status(200).json(books);
-    }
-
-    // Get book catalog
-    if (req.method === 'GET' && req.query.catalog === 'true') {
-        return res.status(200).json(bookCatalog);
-    }
-
-    if (req.method === 'POST') {
-        const { title, author, copies, catalogId } = req.body;
-
-        if (!title || !author) {
-            return res.status(400).json({ error: 'Title and author are required' });
-        }
-
-        // Check if book already exists
-        const existingBook = books.find(b => b.title === title && b.author === author);
-        if (existingBook) {
-            existingBook.copies += copies || 1;
-            return res.status(200).json(existingBook);
-        }
-
-        const newBook = {
-            id: Date.now().toString(),
-            title,
-            author,
-            copies: copies || 1,
-            catalogId,
-        };
-
-        books.push(newBook);
-        return res.status(201).json(newBook);
-    }
-
-    if (req.method === 'DELETE') {
-        const { id } = req.query;
-        books = books.filter(b => b.id !== id);
-        return res.status(200).json({ message: 'Book deleted' });
-    }
-
-    res.status(405).json({ error: 'Method not allowed' });
-}
+]

@@ -214,6 +214,21 @@ form button {
     box-shadow: var(--shadow);
 }
 
+.btn-secondary {
+    background-color: #6b7280;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #4b5563;
+    cursor: not-allowed;
+}
+
+.btn-secondary:disabled {
+    background-color: #9ca3af;
+    cursor: not-allowed;
+}
+
 .btn-sm {
     padding: 0.5rem 1rem;
     font-size: 0.875rem;
@@ -249,6 +264,50 @@ td {
 
 tbody tr:hover {
     background-color: var(--bg-light);
+}
+
+/* Catalog Grid */
+.catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.book-card {
+    background: linear-gradient(135deg, var(--bg-white) 0%, #f9fafb 100%);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.book-card:hover {
+    box-shadow: var(--shadow);
+    transform: translateY(-4px);
+    border-color: var(--accent-color);
+}
+
+.book-card h3 {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+.book-card .author {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    flex-grow: 1;
+}
+
+.book-card .btn {
+    width: 100%;
+    margin-top: auto;
 }
 
 /* Loading & Empty States */
@@ -364,6 +423,11 @@ tbody tr:hover {
     th,
     td {
         padding: 0.5rem;
+    }
+
+    .catalog-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 1rem;
     }
 }
 
