@@ -1,5 +1,6 @@
 # Maven
 target/
+**/target/
 pom.xml.tag
 pom.xml.releaseBackup
 pom.xml.versionsBackup
@@ -7,8 +8,7 @@ pom.xml.backup
 release.properties
 dependency-reduced-pom.xml
 .flattened-pom.xml
-*.jar
-!LibraryManagement.jar
+**/dependency-reduced-pom.xml
 
 # IDE
 .vscode/
@@ -51,7 +51,10 @@ venv/
 .env
 .env.local
 
-# Optional: Exclude data files (uncomment if you want to version control)
+# Docker
+pgdata/
+
+# Data (legacy JSON files — keep versioned, uncomment if unwanted)
 # data/books.json
 # data/users.json
 # data/loans.json

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.Priority?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.library.desktopclient.controller.LibraryController"
+            style="-fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #0f172a 0%, #0b1020 70%); -fx-padding: 16;"
+            prefWidth="1200" prefHeight="800">
+    <top>
+        <HBox spacing="10" style="-fx-alignment: center-left;">
+            <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+            <Label text="Library Management System" style="-fx-text-fill: #e8ecf3; -fx-font-size: 22px; -fx-font-weight: 700; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.45), 14, 0.35, 0, 10);" />
+        </HBox>
+    </top>
+    <center>
+        <TabPane style="-fx-background-color: rgba(31,41,55,0.85); -fx-background-radius: 10; -fx-padding: 8; -fx-border-radius: 10; -fx-border-color: rgba(255,255,255,0.12); -fx-border-width: 1;" prefWidth="1000" prefHeight="600">
+            <tabs>
+                <Tab text="Books">
+                    <VBox spacing="10" style="-fx-background-color: rgba(255,255,255,0.06); -fx-background-radius: 14; -fx-border-radius: 14; -fx-border-color: rgba(255,255,255,0.12); -fx-border-width: 1; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.45), 14, 0.35, 0, 10);" VBox.vgrow="ALWAYS">
+                        <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+                        <TableView fx:id="booksTable" style="-fx-background-color: transparent; -fx-control-inner-background: rgba(0,0,0,0.35); -fx-table-cell-border-color: rgba(255,255,255,0.12); -fx-table-header-border-color: rgba(255,255,255,0.12); -fx-text-fill: #e8ecf3;" VBox.vgrow="ALWAYS">
+                            <columns>
+                                <TableColumn fx:id="bookTitleColumn" text="Title" prefWidth="180" />
+                                <TableColumn fx:id="bookAuthorColumn" text="Author" prefWidth="140" />
+                                <TableColumn fx:id="bookAvailableColumn" text="Available" prefWidth="90" />
+                                <TableColumn fx:id="bookTotalColumn" text="Total" prefWidth="90" />
+                            </columns>
+                        </TableView>
+                        <HBox spacing="10" style="-fx-fill-height: true;">
+                            <TextField fx:id="bookTitleInput" promptText="Title" style="-fx-background-color: rgba(255,255,255,0.12); -fx-text-fill: #e8ecf3; -fx-prompt-text-fill: #9ba8c1; -fx-border-color: rgba(255,255,255,0.12); -fx-border-radius: 10; -fx-background-radius: 10; -fx-padding: 8 12 8 12;" HBox.hgrow="ALWAYS" />
+                            <TextField fx:id="bookAuthorInput" promptText="Author" style="-fx-background-color: rgba(255,255,255,0.12); -fx-text-fill: #e8ecf3; -fx-prompt-text-fill: #9ba8c1; -fx-border-color: rgba(255,255,255,0.12); -fx-border-radius: 10; -fx-background-radius: 10; -fx-padding: 8 12 8 12;" HBox.hgrow="ALWAYS" />
+                            <TextField fx:id="bookCopiesInput" promptText="Copies" style="-fx-background-color: rgba(255,255,255,0.12); -fx-text-fill: #e8ecf3; -fx-prompt-text-fill: #9ba8c1; -fx-border-color: rgba(255,255,255,0.12); -fx-border-radius: 10; -fx-background-radius: 10; -fx-padding: 8 12 8 12;" prefWidth="120" />
+                            <Button text="Add Book" onAction="#handleAddBook" style="-fx-background-color: linear-gradient(#4f8cff, #7dd3fc); -fx-text-fill: white; -fx-font-weight: 700; -fx-background-radius: 12; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.45), 14, 0.35, 0, 10); -fx-padding: 10 16 10 16; -fx-cursor: hand;" />
+                        </HBox>
+                    </VBox>
+                </Tab>
+                <Tab text="Users">
+                    <VBox spacing="10" style="-fx-background-color: rgba(255,255,255,0.06); -fx-background-radius: 14; -fx-border-radius: 14; -fx-border-color: rgba(255,255,255,0.12); -fx-border-width: 1; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.45), 14, 0.35, 0, 10);" VBox.vgrow="ALWAYS">
+                        <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+                        <TableView fx:id="usersTable" style="-fx-background-color: transparent; -fx-control-inner-background: rgba(0,0,0,0.35); -fx-table-cell-border-color: rgba(255,255,255,0.12); -fx-table-header-border-color: rgba(255,255,255,0.12); -fx-text-fill: #e8ecf3;" VBox.vgrow="ALWAYS">
+                            <columns>
+                                <TableColumn fx:id="userNameColumn" text="Name" prefWidth="200" />
+                                <TableColumn fx:id="userEmailColumn" text="Email" prefWidth="220" />
+                            </columns>
+                        </TableView>
+                        <HBox spacing="10" style="-fx-fill-height: true;">
+                            <TextField fx:id="userNameInput" promptText="Name" style="-fx-background-color: rgba(255,255,255,0.12); -fx-text-fill: #e8ecf3; -fx-prompt-text-fill: #9ba8c1; -fx-border-color: rgba(255,255,255,0.12); -fx-border-radius: 10; -fx-background-radius: 10; -fx-padding: 8 12 8 12;" HBox.hgrow="ALWAYS" />
+                            <TextField fx:id="userEmailInput" promptText="Email" style="-fx-background-color: rgba(255,255,255,0.12); -fx-text-fill: #e8ecf3; -fx-prompt-text-fill: #9ba8c1; -fx-border-color: rgba(255,255,255,0.12); -fx-border-radius: 10; -fx-background-radius: 10; -fx-padding: 8 12 8 12;" HBox.hgrow="ALWAYS" />
+                            <Button text="Add User" onAction="#handleAddUser" style="-fx-background-color: linear-gradient(#4f8cff, #7dd3fc); -fx-text-fill: white; -fx-font-weight: 700; -fx-background-radius: 12; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.45), 14, 0.35, 0, 10); -fx-padding: 10 16 10 16; -fx-cursor: hand;" />
+                        </HBox>
+                    </VBox>
+                </Tab>
+                <Tab text="Loans">
+                    <VBox spacing="10" style="-fx-background-color: rgba(255,255,255,0.06); -fx-background-radius: 14; -fx-border-radius: 14; -fx-border-color: rgba(255,255,255,0.12); -fx-border-width: 1; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.45), 14, 0.35, 0, 10);" VBox.vgrow="ALWAYS">
+                        <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+                        <TableView fx:id="loansTable" style="-fx-background-color: transparent; -fx-control-inner-background: rgba(0,0,0,0.35); -fx-table-cell-border-color: rgba(255,255,255,0.12); -fx-table-header-border-color: rgba(255,255,255,0.12); -fx-text-fill: #e8ecf3;" VBox.vgrow="ALWAYS">
+                            <columns>
+                                <TableColumn fx:id="loanBookColumn" text="Book" prefWidth="170" />
+                                <TableColumn fx:id="loanUserColumn" text="User" prefWidth="170" />
+                                <TableColumn fx:id="loanBorrowedColumn" text="Borrowed" prefWidth="90" />
+                                <TableColumn fx:id="loanDueColumn" text="Due" prefWidth="90" />
+                                <TableColumn fx:id="loanReturnedColumn" text="Returned" prefWidth="90" />
+                                <TableColumn fx:id="loanFineColumn" text="Fine" prefWidth="80" />
+                            </columns>
+                        </TableView>
+
+                        <TitledPane text="Borrow" expanded="true" style="-fx-background-color: rgba(19,26,39,0.95); -fx-background-radius: 12; -fx-border-radius: 12; -fx-border-color: rgba(255,255,255,0.12); -fx-border-width: 1; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.45), 14, 0.35, 0, 10); -fx-text-fill: #e8ecf3;">
+                            <HBox spacing="10" style="-fx-background-color: transparent;">
+                                <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+                                <ComboBox fx:id="userSelect" promptText="User" prefWidth="160" style="-fx-background-color: white; -fx-border-color: rgba(0,0,0,0.15); -fx-border-radius: 10; -fx-background-radius: 10; -fx-padding: 8 12 8 12; -fx-text-fill: #1f2937;" />
+                                <ComboBox fx:id="bookSelect" promptText="Book" prefWidth="160" style="-fx-background-color: white; -fx-border-color: rgba(0,0,0,0.15); -fx-border-radius: 10; -fx-background-radius: 10; -fx-padding: 8 12 8 12; -fx-text-fill: #1f2937;" />
+                                <TextField fx:id="loanDaysInput" promptText="Days" prefWidth="80" style="-fx-background-color: white; -fx-text-fill: #1f2937; -fx-prompt-text-fill: #6b7280; -fx-border-color: rgba(0,0,0,0.15); -fx-border-radius: 10; -fx-background-radius: 10; -fx-padding: 8 12 8 12;" />
+                                <Button text="Borrow" onAction="#handleBorrow" style="-fx-background-color: linear-gradient(#4f8cff, #7dd3fc); -fx-text-fill: white; -fx-font-weight: 700; -fx-background-radius: 12; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.45), 14, 0.35, 0, 10); -fx-padding: 10 16 10 16; -fx-cursor: hand;" />
+                            </HBox>
+                        </TitledPane>
+
+                        <TitledPane text="Return" expanded="true" style="-fx-background-color: rgba(19,26,39,0.95); -fx-background-radius: 12; -fx-border-radius: 12; -fx-border-color: rgba(255,255,255,0.12); -fx-border-width: 1; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.45), 14, 0.35, 0, 10); -fx-text-fill: #e8ecf3;">
+                            <HBox spacing="10" style="-fx-background-color: transparent;">
+                                <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+                                <ComboBox fx:id="activeLoanSelect" promptText="Active Loan" prefWidth="220" style="-fx-background-color: white; -fx-border-color: rgba(0,0,0,0.15); -fx-border-radius: 10; -fx-background-radius: 10; -fx-padding: 8 12 8 12; -fx-text-fill: #1f2937;" />
+                                <DatePicker fx:id="returnDatePicker" style="-fx-background-color: white; -fx-border-color: rgba(0,0,0,0.15); -fx-border-radius: 10; -fx-background-radius: 10; -fx-padding: 6 10 6 10; -fx-text-fill: #1f2937;" />
+                                <Button text="Return" onAction="#handleReturn" style="-fx-background-color: linear-gradient(#4f8cff, #7dd3fc); -fx-text-fill: white; -fx-font-weight: 700; -fx-background-radius: 12; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.45), 14, 0.35, 0, 10); -fx-padding: 10 16 10 16; -fx-cursor: hand;" />
+                            </HBox>
+                        </TitledPane>
+                    </VBox>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </center>
+</BorderPane>
