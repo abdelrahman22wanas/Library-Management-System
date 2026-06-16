@@ -9,7 +9,9 @@ spring:
   jpa:
     show-sql: true
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: validate
+  flyway:
+    enabled: true
 
 logging:
   level:
