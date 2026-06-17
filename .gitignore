@@ -58,3 +58,5 @@ pgdata/
 # data/books.json
 # data/users.json
 # data/loans.json
+
+.vercel
