@@ -1,19 +1,31 @@
 import { useEffect, useState } from 'react'
 import client from '../api/client'
+import DataTable from '../components/DataTable'
+import StatusBadge from '../components/StatusBadge'
+import { useToast } from '../components/Toast'
 
 export default function BooksPage() {
   const [books, setBooks] = useState([])
+  const [loading, setLoading] = useState(true)
+  const [search, setSearch] = useState('')
   const [title, setTitle] = useState('')
   const [author, setAuthor] = useState('')
   const [copies, setCopies] = useState(1)
-  const [error, setError] = useState('')
+  const addToast = useToast()
+
+  const filtered = books.filter(b =>
+    !search || b.title.toLowerCase().includes(search.toLowerCase()) || b.author.toLowerCase().includes(search.toLowerCase())
+  )
 
   const fetchBooks = async () => {
+    setLoading(true)
     try {
       const res = await client.get('/books')
       setBooks(res.data)
     } catch {
-      setError('Failed to load books')
+      addToast('Failed to load books', 'error')
+    } finally {
+      setLoading(false)
     }
   }
 
@@ -21,59 +33,71 @@ export default function BooksPage() {
 
   const addBook = async (e) => {
     e.preventDefault()
-    setError('')
     try {
       await client.post('/books', { title, author, copies })
+      addToast('Book added successfully')
       setTitle(''); setAuthor(''); setCopies(1)
       await fetchBooks()
     } catch (err) {
-      setError(err.response?.data || 'Failed to add book')
+      addToast(err.response?.data || 'Failed to add book', 'error')
     }
   }
 
+  const columns = [
+    { key: 'title', label: 'Title' },
+    { key: 'author', label: 'Author' },
+    { key: 'totalCopies', label: 'Total', align: 'center' },
+    { key: 'availableCopies', label: 'Available', align: 'center' },
+    {
+      key: 'status',
+      label: 'Status',
+      align: 'center',
+      sortable: false,
+      render: (b) => (
+        <StatusBadge variant={b.availableCopies > 0 ? 'available' : 'unavailable'}>
+          {b.availableCopies > 0 ? 'Available' : 'Unavailable'}
+        </StatusBadge>
+      ),
+    },
+  ]
+
   return (
     <div>
-      <h1 className="text-2xl font-bold text-gray-800 mb-4">Books</h1>
+      <div className="flex items-center justify-between mb-6">
+        <h1 className="text-2xl font-bold text-gray-800">Books</h1>
+        <span className="text-sm text-gray-400">{books.length} total</span>
+      </div>
 
-      {error && <p className="text-red-600 mb-3">{error}</p>}
+      <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 mb-8">
+        <form onSubmit={addBook} className="lg:col-span-1 p-5 bg-white rounded-xl border border-gray-200 shadow-sm h-fit">
+          <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">Add Book</h2>
+          <div className="flex flex-col gap-3">
+            <input className="border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-transparent" placeholder="Title" value={title} onChange={e => setTitle(e.target.value)} required />
+            <input className="border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-transparent" placeholder="Author" value={author} onChange={e => setAuthor(e.target.value)} required />
+            <div>
+              <label className="text-xs text-gray-400 mb-1 block">Copies</label>
+              <input className="border border-gray-300 rounded-lg px-3 py-2 text-sm w-full focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-transparent" type="number" min="1" value={copies} onChange={e => setCopies(Number(e.target.value))} />
+            </div>
+            <button className="bg-indigo-600 text-white px-4 py-2.5 rounded-lg text-sm font-medium hover:bg-indigo-700 transition-colors">Add Book</button>
+          </div>
+        </form>
 
-      <form onSubmit={addBook} className="flex flex-wrap gap-3 mb-6 p-4 bg-white rounded-lg border border-gray-200">
-        <input className="border border-gray-300 rounded px-3 py-2 text-sm flex-1 min-w-[150px]" placeholder="Title" value={title} onChange={e => setTitle(e.target.value)} required />
-        <input className="border border-gray-300 rounded px-3 py-2 text-sm flex-1 min-w-[150px]" placeholder="Author" value={author} onChange={e => setAuthor(e.target.value)} required />
-        <input className="border border-gray-300 rounded px-3 py-2 text-sm w-20" type="number" min="1" value={copies} onChange={e => setCopies(Number(e.target.value))} />
-        <button className="bg-indigo-600 text-white px-4 py-2 rounded text-sm font-medium hover:bg-indigo-700 transition-colors">Add Book</button>
-      </form>
-
-      <div className="bg-white rounded-lg border border-gray-200 overflow-hidden">
-        <table className="w-full text-sm">
-          <thead className="bg-gray-50 text-gray-600">
-            <tr>
-              <th className="text-left px-4 py-3 font-medium">Title</th>
-              <th className="text-left px-4 py-3 font-medium">Author</th>
-              <th className="text-center px-4 py-3 font-medium">Total</th>
-              <th className="text-center px-4 py-3 font-medium">Available</th>
-              <th className="text-center px-4 py-3 font-medium">Status</th>
-            </tr>
-          </thead>
-          <tbody className="divide-y divide-gray-200">
-            {books.map(b => (
-              <tr key={b.id} className="hover:bg-gray-50">
-                <td className="px-4 py-3">{b.title}</td>
-                <td className="px-4 py-3 text-gray-600">{b.author}</td>
-                <td className="px-4 py-3 text-center">{b.totalCopies}</td>
-                <td className="px-4 py-3 text-center">{b.availableCopies}</td>
-                <td className="px-4 py-3 text-center">
-                  <span className={`inline-block px-2 py-0.5 rounded text-xs font-medium ${b.availableCopies > 0 ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>
-                    {b.availableCopies > 0 ? 'Available' : 'Unavailable'}
-                  </span>
-                </td>
-              </tr>
-            ))}
-            {books.length === 0 && (
-              <tr><td colSpan={5} className="px-4 py-8 text-center text-gray-400">No books yet</td></tr>
-            )}
-          </tbody>
-        </table>
+        <div className="lg:col-span-3">
+          <input
+            className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm mb-4 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-transparent"
+            placeholder="Search by title or author…"
+            value={search}
+            onChange={e => setSearch(e.target.value)}
+          />
+          <DataTable
+            columns={columns}
+            data={filtered}
+            loading={loading}
+            emptyTitle="No books found"
+            emptyMessage={search ? 'Try a different search term' : 'Add your first book using the form'}
+            emptyIcon="📚"
+          />
+        </div>
       </div>
     </div>
   )

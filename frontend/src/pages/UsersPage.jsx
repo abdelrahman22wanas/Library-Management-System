@@ -1,18 +1,29 @@
 import { useEffect, useState } from 'react'
 import client from '../api/client'
+import DataTable from '../components/DataTable'
+import { useToast } from '../components/Toast'
 
 export default function UsersPage() {
   const [users, setUsers] = useState([])
+  const [loading, setLoading] = useState(true)
+  const [search, setSearch] = useState('')
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
-  const [error, setError] = useState('')
+  const addToast = useToast()
+
+  const filtered = users.filter(u =>
+    !search || u.name.toLowerCase().includes(search.toLowerCase()) || u.email.toLowerCase().includes(search.toLowerCase())
+  )
 
   const fetchUsers = async () => {
+    setLoading(true)
     try {
       const res = await client.get('/users')
       setUsers(res.data)
     } catch {
-      setError('Failed to load users')
+      addToast('Failed to load users', 'error')
+    } finally {
+      setLoading(false)
     }
   }
 
@@ -20,48 +31,54 @@ export default function UsersPage() {
 
   const addUser = async (e) => {
     e.preventDefault()
-    setError('')
     try {
       await client.post('/users', { name, email })
+      addToast('User added successfully')
       setName(''); setEmail('')
       await fetchUsers()
     } catch (err) {
-      setError(err.response?.data || 'Failed to add user')
+      addToast(err.response?.data || 'Failed to add user', 'error')
     }
   }
 
+  const columns = [
+    { key: 'name', label: 'Name' },
+    { key: 'email', label: 'Email' },
+  ]
+
   return (
     <div>
-      <h1 className="text-2xl font-bold text-gray-800 mb-4">Users</h1>
+      <div className="flex items-center justify-between mb-6">
+        <h1 className="text-2xl font-bold text-gray-800">Users</h1>
+        <span className="text-sm text-gray-400">{users.length} total</span>
+      </div>
 
-      {error && <p className="text-red-600 mb-3">{error}</p>}
+      <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 mb-8">
+        <form onSubmit={addUser} className="lg:col-span-1 p-5 bg-white rounded-xl border border-gray-200 shadow-sm h-fit">
+          <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">Add User</h2>
+          <div className="flex flex-col gap-3">
+            <input className="border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-transparent" placeholder="Name" value={name} onChange={e => setName(e.target.value)} required />
+            <input className="border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-transparent" type="email" placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} required />
+            <button className="bg-indigo-600 text-white px-4 py-2.5 rounded-lg text-sm font-medium hover:bg-indigo-700 transition-colors">Add User</button>
+          </div>
+        </form>
 
-      <form onSubmit={addUser} className="flex flex-wrap gap-3 mb-6 p-4 bg-white rounded-lg border border-gray-200">
-        <input className="border border-gray-300 rounded px-3 py-2 text-sm flex-1 min-w-[150px]" placeholder="Name" value={name} onChange={e => setName(e.target.value)} required />
-        <input className="border border-gray-300 rounded px-3 py-2 text-sm flex-1 min-w-[200px]" type="email" placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} required />
-        <button className="bg-indigo-600 text-white px-4 py-2 rounded text-sm font-medium hover:bg-indigo-700 transition-colors">Add User</button>
-      </form>
-
-      <div className="bg-white rounded-lg border border-gray-200 overflow-hidden">
-        <table className="w-full text-sm">
-          <thead className="bg-gray-50 text-gray-600">
-            <tr>
-              <th className="text-left px-4 py-3 font-medium">Name</th>
-              <th className="text-left px-4 py-3 font-medium">Email</th>
-            </tr>
-          </thead>
-          <tbody className="divide-y divide-gray-200">
-            {users.map(u => (
-              <tr key={u.id} className="hover:bg-gray-50">
-                <td className="px-4 py-3">{u.name}</td>
-                <td className="px-4 py-3 text-gray-600">{u.email}</td>
-              </tr>
-            ))}
-            {users.length === 0 && (
-              <tr><td colSpan={2} className="px-4 py-8 text-center text-gray-400">No users yet</td></tr>
-            )}
-          </tbody>
-        </table>
+        <div className="lg:col-span-3">
+          <input
+            className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm mb-4 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-transparent"
+            placeholder="Search by name or email…"
+            value={search}
+            onChange={e => setSearch(e.target.value)}
+          />
+          <DataTable
+            columns={columns}
+            data={filtered}
+            loading={loading}
+            emptyTitle="No users found"
+            emptyMessage={search ? 'Try a different search term' : 'Add your first user using the form'}
+            emptyIcon="👤"
+          />
+        </div>
       </div>
     </div>
   )
